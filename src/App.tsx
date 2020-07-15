@@ -1,24 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState, useEffect } from 'react';
 import './App.css';
+import { SerialMonitor } from './SerialMonitor';
 
-function App() {
+interface AppProps {
+  readonly serialMonitor: SerialMonitor;
+}
+
+function App({ serialMonitor }: AppProps) {
+  const [serialOutput, updateSerialOutput] = useState("");
+
+  useEffect(() => {
+    serialMonitor.onRead(updateSerialOutput);
+  }, [serialMonitor]);
+
+  const connectSerialMonitor = () => {
+    serialMonitor.connect();
+    serialMonitor.onRead(updateSerialOutput);
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <button id="connect" onClick={() => connectSerialMonitor()}>
+        Connect the serial monitor
+      </button>
+      <div id="serial-output">
+        {serialOutput}
+      </div>
     </div>
   );
 }
