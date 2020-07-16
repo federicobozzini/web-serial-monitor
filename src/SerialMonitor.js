@@ -1,6 +1,8 @@
 /*global TextDecoderStream*/
 
 export class SerialMonitor {
+
+  baudRate = 9600;
   port;
   serial;
   reader;
@@ -19,7 +21,8 @@ export class SerialMonitor {
       throw Error("Connection: missing Serial object");
     }
     this.port = await this.serial.requestPort();
-    await this.port.open({ baudrate: 9600 });
+    console.log(this.baudRate);
+    await this.port.open({ baudrate: this.baudRate });
     this.connectionCallback(true);
     const decoder = new TextDecoderStream();
     this.inputDone = this.port.readable.pipeTo(decoder.writable);
@@ -59,6 +62,10 @@ export class SerialMonitor {
     await this.port.close();
     this.port = undefined;
     this.connectionCallback(false);
+  }
+
+  setBaudRate(baudRate) {
+    this.baudRate = baudRate;
   }
 
   onConnectionEvent(cb) {

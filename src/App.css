@@ -20,7 +20,20 @@ body {
   font-size: calc(10px + 1vmin);
 }
 
-#connect {
+#settings {
+  border-radius: 4px;
+  align-items: center;
+  text-align: left;
+  border: 1px solid #383c44;
+  display: inline-block;
+  padding: 5px 20px;
+}
+
+#settings > label > * {
+  margin-left: 20px;
+}
+
+#connect > button {
   border-radius: 4px;
   padding: 5px;
   margin-top: 10px;
