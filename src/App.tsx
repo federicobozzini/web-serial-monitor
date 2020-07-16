@@ -27,7 +27,7 @@ function App({ serialMonitor }: AppProps) {
     }
   };
   return (
-    <div className="App">
+    <div id="app">
       <button id="connect" onClick={() => onClick()}>
         {isConnected ? "Disconnect" : "Connect"}
       </button>

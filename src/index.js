@@ -8,7 +8,10 @@ import { SerialMonitor } from './SerialMonitor';
 if (!('serial' in navigator)) {
   ReactDOM.render(
     <React.StrictMode>
-      Web Serial APIs are not supported by your browser
+      <div id="error">
+        <div>Web Serial is not supported by your browser.</div>
+        <div>Make sure you're running Chrome 78 or later and have enabled the #enable-experimental-web-platform-features flag in chrome://flags</div>
+      </div>
     </React.StrictMode>,
     document.getElementById('root')
   );
