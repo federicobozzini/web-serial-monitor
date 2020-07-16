@@ -13,18 +13,25 @@ function App({ serialMonitor }: AppProps) {
     active: "",
   });
   const [isConnected, updateIsConnected] = useState(false);
-  serialMonitor.onRead(updateSerialOutput);
+  const [error, updateError] = useState("");
 
   useEffect(() => {
     serialMonitor.onRead(updateSerialOutput);
-    serialMonitor.onConnectionEvent(updateIsConnected);
+    serialMonitor.onConnectionEvent((connected: boolean) => {
+      updateIsConnected(connected);
+      updateError("");
+    });
   }, [serialMonitor]);
 
   const onClick = async () => {
-    if (isConnected) {
-      await serialMonitor.disconnect();
-    } else {
-      serialMonitor.connect();
+    try {
+      if (isConnected) {
+        await serialMonitor.disconnect();
+      } else {
+        await serialMonitor.connect();
+      }
+    } catch (e) {
+      updateError(`An error happened: "${e}"`);
     }
   };
   return (
@@ -59,6 +66,7 @@ function App({ serialMonitor }: AppProps) {
           </div>
         )}
         <div id="active">{serialOutput.active}</div>
+        <div id="error">{error}</div>
       </div>
     </div>
   );

@@ -6,12 +6,12 @@ body {
   font-size: calc(10px + 1vmin);
 }
 
-#error {
+#compatibility-error {
   padding-top: 30px;
   font-size: calc(12px + 1vmin);
 }
 
-#error >  div {
+#compatibility-error >  div {
   padding-bottom: 20px;
 }
 
@@ -56,11 +56,18 @@ body {
   margin: 20px auto 0;
 }
 
+#serial-output > * {
+  margin-bottom: 5px;
+}
+
 #serial-output #history {
   color: #bbbbbb;
-  margin-bottom: 5px;
 }
 
 #serial-output #history > div {
   margin-bottom: 5px;
+}
+
+#serial-output #error {
+  color: red;
 }
