@@ -16,7 +16,7 @@
   font-size: 1.2em;
   text-align: center;
   align-items: center;
-  display: inline-block;
+  min-width: 140px;
 }
 
 #serial-output {
@@ -28,4 +28,13 @@
   padding: 2px;
   min-height: 80vh;
   margin: 20px auto 0;
+}
+
+#serial-output #history {
+  color: #bbbbbb;
+  margin-bottom: 5px;
+}
+
+#serial-output #history > div {
+  margin-bottom: 5px;
 }
