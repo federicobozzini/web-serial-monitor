@@ -7,6 +7,7 @@ interface AppProps {
 }
 
 function App({ serialMonitor }: AppProps) {
+  const baudRates = [9600, 14400, 19200, 28800, 38400, 56000, 57600, 115200];
   const [serialOutput, updateSerialOutput] = useState({
     history: [],
     active: "",
@@ -28,9 +29,27 @@ function App({ serialMonitor }: AppProps) {
   };
   return (
     <div id="app">
-      <button id="connect" onClick={() => onClick()}>
-        {isConnected ? "Disconnect" : "Connect"}
-      </button>
+      <div id="settings">
+        <label>
+          Baud Rate:
+          <select
+            disabled={isConnected}
+            onChange={(e) => serialMonitor.setBaudRate(+e.target.value)}
+            defaultValue={serialMonitor.baudRate}
+          >
+            {baudRates.map((r, i) => (
+              <option key={i} value={r}>
+                {r}
+              </option>
+            ))}
+          </select>
+        </label>
+      </div>
+      <div id="connect">
+        <button onClick={() => onClick()}>
+          {isConnected ? "Disconnect" : "Connect"}
+        </button>
+      </div>
       <div id="serial-output">
         {serialOutput.history.length > 0 && (
           <div id="history">
