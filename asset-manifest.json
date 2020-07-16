@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/web-serial-monitor/static/css/main.f26fb67d.chunk.css",
+    "main.js": "/web-serial-monitor/static/js/main.fab0e934.chunk.js",
+    "main.js.map": "/web-serial-monitor/static/js/main.fab0e934.chunk.js.map",
+    "runtime-main.js": "/web-serial-monitor/static/js/runtime-main.902e1185.js",
+    "runtime-main.js.map": "/web-serial-monitor/static/js/runtime-main.902e1185.js.map",
+    "static/js/2.3a5790c7.chunk.js": "/web-serial-monitor/static/js/2.3a5790c7.chunk.js",
+    "static/js/2.3a5790c7.chunk.js.map": "/web-serial-monitor/static/js/2.3a5790c7.chunk.js.map",
+    "index.html": "/web-serial-monitor/index.html",
+    "precache-manifest.991acd02b69c73e41f35abc56aca7253.js": "/web-serial-monitor/precache-manifest.991acd02b69c73e41f35abc56aca7253.js",
+    "service-worker.js": "/web-serial-monitor/service-worker.js",
+    "static/css/main.f26fb67d.chunk.css.map": "/web-serial-monitor/static/css/main.f26fb67d.chunk.css.map",
+    "static/js/2.3a5790c7.chunk.js.LICENSE.txt": "/web-serial-monitor/static/js/2.3a5790c7.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.902e1185.js",
+    "static/js/2.3a5790c7.chunk.js",
+    "static/css/main.f26fb67d.chunk.css",
+    "static/js/main.fab0e934.chunk.js"
+  ]
+}
