@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/web-serial-monitor/precache-manifest.38e15e8e1627cdab433ba89927d8cf73.js"
+  "/web-serial-monitor/precache-manifest.41e3cbe4bfdcb55853be72a92c46f4e0.js"
 );
 
 self.addEventListener('message', (event) => {

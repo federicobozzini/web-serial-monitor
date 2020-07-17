@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/web-serial-monitor/static/css/main.5f660f76.chunk.css",
-    "main.js": "/web-serial-monitor/static/js/main.c42e3dd5.chunk.js",
-    "main.js.map": "/web-serial-monitor/static/js/main.c42e3dd5.chunk.js.map",
+    "main.js": "/web-serial-monitor/static/js/main.eb6e9f4c.chunk.js",
+    "main.js.map": "/web-serial-monitor/static/js/main.eb6e9f4c.chunk.js.map",
     "runtime-main.js": "/web-serial-monitor/static/js/runtime-main.902e1185.js",
     "runtime-main.js.map": "/web-serial-monitor/static/js/runtime-main.902e1185.js.map",
     "static/js/2.d0a28b64.chunk.js": "/web-serial-monitor/static/js/2.d0a28b64.chunk.js",
     "static/js/2.d0a28b64.chunk.js.map": "/web-serial-monitor/static/js/2.d0a28b64.chunk.js.map",
     "index.html": "/web-serial-monitor/index.html",
-    "precache-manifest.38e15e8e1627cdab433ba89927d8cf73.js": "/web-serial-monitor/precache-manifest.38e15e8e1627cdab433ba89927d8cf73.js",
+    "precache-manifest.41e3cbe4bfdcb55853be72a92c46f4e0.js": "/web-serial-monitor/precache-manifest.41e3cbe4bfdcb55853be72a92c46f4e0.js",
     "service-worker.js": "/web-serial-monitor/service-worker.js",
     "static/css/main.5f660f76.chunk.css.map": "/web-serial-monitor/static/css/main.5f660f76.chunk.css.map",
     "static/js/2.d0a28b64.chunk.js.LICENSE.txt": "/web-serial-monitor/static/js/2.d0a28b64.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.902e1185.js",
     "static/js/2.d0a28b64.chunk.js",
     "static/css/main.5f660f76.chunk.css",
-    "static/js/main.c42e3dd5.chunk.js"
+    "static/js/main.eb6e9f4c.chunk.js"
   ]
 }
