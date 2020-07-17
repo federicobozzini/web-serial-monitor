@@ -7,21 +7,29 @@ interface AppProps {
 }
 
 function App({ serialMonitor }: AppProps) {
+
   const baudRates = [9600, 14400, 19200, 28800, 38400, 56000, 57600, 115200];
-  const [serialOutput, updateSerialOutput] = useState({
-    history: [],
-    active: "",
-  });
-  const [isConnected, updateIsConnected] = useState(false);
-  const [error, updateError] = useState("");
+  const [outputHistory, setOutputHistory] = useState<string[]>([]);
+  const [activeOutput, setActiveOutput] = useState("");
+  const [isConnected, setIsConnected] = useState(false);
+  const [error, setError] = useState("");
 
   useEffect(() => {
-    serialMonitor.onRead(updateSerialOutput);
-    serialMonitor.onConnectionEvent((connected: boolean) => {
-      updateIsConnected(connected);
-      updateError("");
+    serialMonitor.onRead((outputRead: string) => {
+      setActiveOutput(prevActiveOutput => prevActiveOutput + outputRead);
     });
   }, [serialMonitor]);
+
+  useEffect(() => {
+    serialMonitor.onConnectionEvent((connected: boolean) => {
+      if (!connected) {
+        setOutputHistory(prevOutputHistory => [...prevOutputHistory, activeOutput]);
+        setActiveOutput("");
+      }
+      setIsConnected(connected);
+      setError("");
+    });
+  }, [serialMonitor, activeOutput]);
 
   const onClick = async () => {
     try {
@@ -31,9 +39,10 @@ function App({ serialMonitor }: AppProps) {
         await serialMonitor.connect();
       }
     } catch (e) {
-      updateError(`An error happened: "${e}"`);
+      setError(`An error happened: "${e}"`);
     }
   };
+
   return (
     <div id="app">
       <div id="settings">
@@ -58,14 +67,14 @@ function App({ serialMonitor }: AppProps) {
         </button>
       </div>
       <div id="serial-output">
-        {serialOutput.history.length > 0 && (
+        {outputHistory.length > 0 && (
           <div id="history">
-            {serialOutput.history.map((o, i) => (
+            {outputHistory.map((o, i) => (
               <div key={i}>{o}</div>
             ))}
           </div>
         )}
-        <div id="active">{serialOutput.active}</div>
+        <div id="active">{activeOutput}</div>
         <div id="error">{error}</div>
       </div>
     </div>

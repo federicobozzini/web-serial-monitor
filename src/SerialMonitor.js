@@ -9,8 +9,6 @@ export class SerialMonitor {
   inputDone;
   readCallback;
   connectionCallback;
-  activeOutput = "";
-  outputHistory = [];
 
   constructor(serial) {
     this.serial = serial;
@@ -31,13 +29,9 @@ export class SerialMonitor {
     while (true) {
       const { value, done } = await this.reader.read();
       if (value) {
-        this.activeOutput += value;
-        this.readCallback({ history: this.outputHistory, active: this.activeOutput, });
+        this.readCallback(value);
       }
       if (done) {
-        this.outputHistory.push(this.activeOutput);
-        this.activeOutput = "";
-        this.readCallback({ history: this.outputHistory, active: this.activeOutput, });
         this.reader.releaseLock();
         break;
       }
