@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "461fbb22ab2083b5f3d91cb6f9ba99fd",
+    "revision": "c76459c1a955f7a9952f46d75edce784",
     "url": "/web-serial-monitor/index.html"
   },
   {
-    "revision": "8c4522d594c48735a010",
+    "revision": "ad16f8b2a3ccd4d164e6",
     "url": "/web-serial-monitor/static/css/main.5f660f76.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/web-serial-monitor/static/js/2.d0a28b64.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "8c4522d594c48735a010",
-    "url": "/web-serial-monitor/static/js/main.63d7165f.chunk.js"
+    "revision": "ad16f8b2a3ccd4d164e6",
+    "url": "/web-serial-monitor/static/js/main.c42e3dd5.chunk.js"
   },
   {
     "revision": "a2021a7bcfc818e9142b",
